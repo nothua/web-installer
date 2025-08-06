@@ -1,0 +1,20 @@
+[package]
+name = "vpos-installer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+directories = "6.0.0"
+eframe = "0.31.1"
+image = "0.25.6"
+json = "0.12.4"
+reqwest = {version = "0.12.15", features = ["blocking"]}
+sevenz-rust = "0.2"
+winreg = "0.55.0"
+
+[profile.release]
+opt-level = "z"
+strip = true   
+panic = "abort" 
+lto = true       
+codegen-units = 1
